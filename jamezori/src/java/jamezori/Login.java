@@ -25,11 +25,6 @@ public class Login {
         return "mainSide.xhtml";
     }
 
-    public String regSide() {
-
-        return "register.xhtml";
-    }
-
     /**
      * @return the name
      */

@@ -6,8 +6,11 @@
 
 package jamezori;
 
+import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import sql.UserDAO;
 
 /**
  *
@@ -18,13 +21,16 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class Register {
     
+    @ManagedProperty(value="#{userDAO}")
+    private UserDAO user;
+    
     private String userid;
     private String password;
     
     
-    public String doRegister(){
+    public String doRegister() throws ClassNotFoundException, SQLException{
         
-        System.out.println(getUserid() + " " + getPassword());
+        user.registerUser(userid, password);
         
         return "index.html";
     }
@@ -55,6 +61,20 @@ public class Register {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the user
+     */
+    public UserDAO getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(UserDAO user) {
+        this.user = user;
     }
     
     

@@ -8,6 +8,7 @@ package sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.faces.bean.ApplicationScoped;
@@ -76,7 +77,18 @@ public class UserDAO {
             
             Statement stmt = conn.createStatement();
             
+            String doesUserExist = "select userID from user;";
             String strSql = "insert into user(userID,pwd) values ('" + username + "','" + password + "');";
+            
+            ResultSet set = stmt.executeQuery(doesUserExist);
+            
+            while(set.next())
+            {
+                if(username.equals(set.getString("userID")))
+                {
+                    return false;
+                }    
+            }
             
             stmt.executeUpdate(strSql);
             

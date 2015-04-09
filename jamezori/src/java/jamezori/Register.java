@@ -26,14 +26,19 @@ public class Register {
     
     private String userid;
     private String password;
+    private String errorMessage;
     
     
     public String doRegister() throws ClassNotFoundException, SQLException{
         
-        user.registerUser(userid, password);
+        if(user.registerUser(userid, password)==false){
+            errorMessage = "Der Username ist schon vergeben.";
+            userid = "";
+            return "register.xthml";
+        }
         
         userid = "";
-        password = "";
+        errorMessage = "";
         
         return "index.html";
     }
@@ -78,6 +83,20 @@ public class Register {
      */
     public void setUser(UserDAO user) {
         this.user = user;
+    }
+
+    /**
+     * @return the errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    /**
+     * @param errorMessage the errorMessage to set
+     */
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
     
     

@@ -8,7 +8,6 @@ package sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.faces.bean.ApplicationScoped;
@@ -36,8 +35,38 @@ public class UserDAO {
         
     }
     
+    private void createDatabase()  throws ClassNotFoundException, SQLException {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root","");
+            Statement st = conn.createStatement();
+            st.executeUpdate("CREATE DATABASE IF NOT EXISTS jamezori");
+            System.out.println("Database created !");
+        } 
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void createTable()  throws ClassNotFoundException, SQLException{
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jamezori","root","");
+            Statement stat = conn.createStatement();
+            
+            stat.execute("create table IF NOT EXISTS user(userID varchar(255),pwd varchar(255));");
+            
+        } 
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
     public boolean registerUser(String username, String password) throws ClassNotFoundException, SQLException 
     {
+        
+        createDatabase();
+        createTable();
         
         try
         {

@@ -32,6 +32,9 @@ public class Register {
         
         user.registerUser(userid, password);
         
+        userid = "";
+        password = "";
+        
         return "index.html";
     }
 

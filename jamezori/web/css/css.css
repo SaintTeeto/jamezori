@@ -8,28 +8,13 @@ and open the template in the editor.
     Author     : 5ia13meislami
 */
 
-html{
-
+body{
+    background-color: lightgreen;
 }
-
-H1{
-    font-size: 28pt;
-    font-family: Comic Sans MS;
-    color:black;
-    position:absolute;
-    left:620px; top:400px; width:300px; height:150px;
-
-}
-
-#login{
+#center{
     font-family: Comic Sans MS;
     font-size: 16pt;
     color:black;
-    position:absolute;
-    left:600px; top:500px; width:300px; height:150px;
-}
-
-#register{
-    position:absolute;
-    left:800px; top:580px; width:300px; height:150px;  
+    position:fixed;
+    top:40%;right:40%;
 }

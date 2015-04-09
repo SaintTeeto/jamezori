@@ -4,20 +4,28 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Facelet Title</title>
+        <link rel="stylesheet" type="text/css" href="css/css.css" />
+
     </h:head>
     <h:body>
-        <h:form>
-            <p>
-                <h:outputLabel for="user">Username:</h:outputLabel>
-                <h:inputText id="user" value="#{register.userid}"/>
-            </p>
-            <p>
-                <h:outputLabel for="pwd">Passwort:</h:outputLabel>
-                <h:inputSecret id="pwd" value="#{register.password}"/>
-            </p>
-            
-            <h:commandButton action="#{register.doRegister()}"/>
-        </h:form>
+        <div id="wrapper">
+            <div id="logo">
+                <h:graphicImage url="/img/logo_panda.jpg" width="300" />
+            </div> 
+            <h:form>
+                <div id="center">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="user">Username:</h:outputLabel>
+                        <h:inputText id="user" value="#{register.userid}"/>
+
+                        <h:outputLabel for="pwd">Passwort:</h:outputLabel>
+                        <h:inputSecret id="pwd" value="#{register.password}"/>
+
+                        <h:commandButton action="#{register.doRegister()}" value="Registrieren"/>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+        </div>
     </h:body>
 </html>
 

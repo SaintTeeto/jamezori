@@ -2,43 +2,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-            xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <title><ui:insert name="title"/></title>
         <link rel="stylesheet" type="text/css" href="css/css.css" />
         <link rel="stylesheet" type="text/css" href="css_zoe/templateCss.css" />
-        
+
     </h:head>
     <h:body>
         <div id="wrapper">
-        <div id="logo">
-            <h:graphicImage url="/img/logo_panda.jpg" width="300" />
-        </div>    
-        <h:form>
+            <div id="logo">
+                <h:graphicImage url="/img/logo_panda.jpg" width="300" />
+            </div>    
+            <h:form>
+                <div id="center">
+                    <h1>
+                        JAMEZORI
+                    </h1>
 
-            <h1>
-                JAMEZORI
-            </h1>
-            <div id="login">
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Name:"/>
-                    <h:inputText id="Name" value="#{login.name}"/>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Name:"/>
+                        <h:inputText id="Name" value="#{login.name}"/>
 
-                    <h:outputLabel value="Password:"/>
-                    <h:inputSecret id="Password" value="#{login.password}"/>
+                        <h:outputLabel value="Password:"/>
+                        <h:inputSecret id="Password" value="#{login.password}"/>
 
-                    <h:commandButton id="button" value="Login" action="#{login.mainSide}" />
+                        <h:commandButton id="button" value="Login" action="#{login.mainSide}" />
+                        <h:button style="float:right" outcome="register" value="Registrieren"/>
+                    </h:panelGrid>
+                </div>
 
+            </h:form>
 
-                </h:panelGrid>
-            </div>
-        </h:form>
-
-        <div id="register">
-            <h:button outcome="register" value="Registrieren"/>
-        </div>
-        
-        <ui:insert name="content"/>
+            <ui:insert name="content"/>
         </div>
     </h:body>
 </html>

@@ -19,7 +19,9 @@
                     <h1>
                         JAMEZORI
                     </h1>
-
+  
+                        
+                    <h:outputText value="#{login.errorMessage}" style="color:red;" />
                     <h:panelGrid columns="2">
                         <h:outputLabel value="Name:"/>
                         <h:inputText id="Name" value="#{login.name}"/>
@@ -27,7 +29,7 @@
                         <h:outputLabel value="Password:"/>
                         <h:inputSecret id="Password" value="#{login.password}"/>
 
-                        <h:commandButton id="button" value="Login" action="#{login.mainSide}" />
+                        <h:commandButton id="button" value="Login" action="#{login.doLogin()}" />
                         <h:button style="float:right" outcome="register" value="Registrieren"/>
                     </h:panelGrid>
                 </div>

@@ -5,8 +5,11 @@
  */
 package jamezori;
 
+import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import sql.UserDAO;
 
 /**
  *
@@ -17,12 +20,23 @@ import javax.faces.bean.RequestScoped;
 
 public class Login {
 
+    @ManagedProperty(value = "#{userDAO}")
+    private UserDAO user;
+
     private String name;
     private String password;
+    private String errorMessage;
 
-    public String mainSide() {
+    public String doLogin() throws ClassNotFoundException, SQLException {
 
-        return "start.xhtml";
+        if (user.loginUser(name, password) == false) {
+            errorMessage = "Username existiert nicht, bitte registrieren.";
+            name = "";
+            return "index.xthml";
+        } else {
+            errorMessage = "";
+            return "app/start.xhtml";
+        }
     }
 
     /**
@@ -51,6 +65,34 @@ public class Login {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    /**
+     * @param errorMessage the errorMessage to set
+     */
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    /**
+     * @return the user
+     */
+    public UserDAO getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(UserDAO user) {
+        this.user = user;
     }
 
 }

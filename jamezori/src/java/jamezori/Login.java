@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 import sql.UserDAO;
 
 /**
@@ -26,6 +27,7 @@ public class Login {
     private String name;
     private String password;
     private String errorMessage;
+    //public LoginController loginController;
 
     public String doLogin() throws ClassNotFoundException, SQLException {
 
@@ -39,6 +41,15 @@ public class Login {
         }
     }
 
+    /*public String checkUserSession() {
+     loginController = (LoginController) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("loginController");
+     if (!loginController.getIsLoggedIn()) {
+     return "login.html";
+     } else {
+     return null;
+     }
+     }*/
+    
     /**
      * @return the name
      */

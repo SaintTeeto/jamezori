@@ -8,13 +8,18 @@ and open the template in the editor.
     Author     : 5ia13meislami
 */
 
-body{
-    background-color: lightgreen;
+html{
+    background-color: rgb(255,228,225);
 }
+
 #center{
     font-family: Comic Sans MS;
     font-size: 16pt;
     color:black;
     position:fixed;
     top:40%;right:40%;
+}
+
+#logo{
+    position:absolute;
 }

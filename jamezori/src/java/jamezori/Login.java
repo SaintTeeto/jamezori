@@ -22,7 +22,7 @@ public class Login {
 
     public String mainSide() {
 
-        return "mainSide.xhtml";
+        return "start.xhtml";
     }
 
     /**

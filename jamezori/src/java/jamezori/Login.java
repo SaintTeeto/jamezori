@@ -27,13 +27,14 @@ public class Login {
     private String name;
     private String password;
     private String errorMessage;
-    //public LoginController loginController;
+    private boolean isLogged = false;
 
     public String doLogin() throws ClassNotFoundException, SQLException {
 
         if (user.loginUser(name, password) == false) {
             errorMessage = "Username existiert nicht, bitte registrieren.";
             name = "";
+            isLogged = true;
             return "index.xthml";
         } else {
             errorMessage = "";
@@ -41,15 +42,6 @@ public class Login {
         }
     }
 
-    /*public String checkUserSession() {
-     loginController = (LoginController) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("loginController");
-     if (!loginController.getIsLoggedIn()) {
-     return "login.html";
-     } else {
-     return null;
-     }
-     }*/
-    
     /**
      * @return the name
      */
@@ -104,6 +96,13 @@ public class Login {
      */
     public void setUser(UserDAO user) {
         this.user = user;
+    }
+
+    /**
+     * @return the isLogged
+     */
+    public boolean isIsLogged() {
+        return isLogged;
     }
 
 }

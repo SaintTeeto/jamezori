@@ -21,7 +21,9 @@
                         <h:link value="Profil" outcome="index" />
                         <h:link value="Index" outcome="index"/>
                         <h:link value="Startseite" outcome="index"/>
-                        <h:link value="Abmelden" outcome="index"/>
+                        <h:form>
+                            <h:commandLink value="Abmelden" action="#{login.logOut()}" />
+                        </h:form>
                     </h:panelGrid>  
                 </div>
 
@@ -30,6 +32,7 @@
                 <link href="" value="Profil"/>
                 <link href="" value="Startseite"/>
                 <link href="" value="Abmelden"/>-->
+
             </div>
 
             <div id="pictures"> 
@@ -39,8 +42,8 @@
 
             <div id="edit">  
                 <h:panelGrid columns="2">   
-                        <a href="#" class="action-button shadow animate blue">Bilder hochladen</a>
-                        <a href="#" class="action-button shadow animate red">Bilder löschen</a>
+                    <a href="#" class="action-button shadow animate blue">Bilder hochladen</a>
+                    <a href="#" class="action-button shadow animate red">Bilder löschen</a>
                 </h:panelGrid>
             </div> 
         </div>

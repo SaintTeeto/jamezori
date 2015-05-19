@@ -34,12 +34,17 @@ public class Login {
         if (user.loginUser(name, password) == false) {
             errorMessage = "Username existiert nicht, bitte registrieren.";
             name = "";
-            isLogged = true;
             return "index.xthml";
         } else {
             errorMessage = "";
-            return "app/start.xhtml";
+            isLogged = true;
+            return "/app/start.xhtml";
         }
+    }
+
+    public String logOut() {
+        isLogged = false;
+        return "index.xhtml";
     }
 
     /**

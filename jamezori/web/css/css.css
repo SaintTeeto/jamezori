@@ -23,3 +23,109 @@ html{
 #logo{
     position:absolute;
 }
+
+#nav{
+    background-color: rgba(255,255,255,0.5);
+    min-width: 300px;
+    min-height: 1000px;
+    float:left;
+    margin-top: 15%;
+    font-family: Comic Sans MS;
+    border-radius:40px;
+}
+
+#inline_nav{
+    margin-top:10px;
+    margin-left:20px;
+    font-family: 'Pacifico', cursive;
+    text-decoration: none;
+    font-size:20pt;
+}
+
+link{
+    color:#FF99FF;
+}
+#pictures{
+    background-color: rgba(255,255,255,0.5);
+    margin-left:10%;
+    float:left;
+    width: 50%;
+    text-align: center;
+    min-height: 1000px;  
+    border-radius:40px;
+    
+    font-family: Comic Sans MS;
+}
+
+
+button{
+  font-family: 'comic sans ms';
+  color: #000000 !important;
+  font-size: 13px;
+  text-shadow: 1px 1px 0px #7345DE;
+  box-shadow: 1px 1px 1px #A9BCF9;
+  padding: 10px 25px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  border: 2px outset #956FA3;
+  background: #BF62EE;
+  background: linear-gradient(top,  #BB81EE,  #CF9BC8);
+  background: -ms-linear-gradient(top,  #BB81EE,  #CF9BC8);
+  background: -webkit-gradient(linear, left top, left bottom, from(#BB81EE), to(#CF9BC8));
+  background: -moz-linear-gradient(top,  #BB81EE,  #CF9BC8);
+}
+button :hover {
+  color: #4E1D6A !important;
+  background: #4D62CF;
+  background: linear-gradient(top,  #B793CF,  #DA77EE);
+  background: -ms-linear-gradient(top,  #B793CF,  #DA77EE);
+  background: -webkit-gradient(linear, left top, left bottom, from(#B793CF), to(#DA77EE));
+  background: -moz-linear-gradient(top,  #B793CF,  #DA77EE);
+}
+
+
+
+
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 7px 30px;
+  margin: 5px 10px 10px 10px;
+  float: left;
+	border-radius: 7px;
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+        min-width: 200px;
+        text-align: center;
+}
+
+.blue
+{
+	background-color: RGB(129,207,155);
+	border-bottom: 5px solid #FF99FF;
+	text-shadow: 0px -2px #FF99FF;
+}
+
+.red
+{
+	background-color: RGB(129,207,155);
+	border-bottom: 5px solid #FF99FF;
+	text-shadow: 0px -2px #FF99FF;
+}
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+

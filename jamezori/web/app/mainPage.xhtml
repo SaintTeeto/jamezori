@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Home</title>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'/>
+        <link rel="stylesheet" type="text/css" href="../css/css.css" />
+    </h:head>
+
+    <h:body>
+        <div id="wrapper">
+            <div id="logo">
+                <h:graphicImage url="../img/logo_panda.jpg" width="300" />
+            </div>   
+
+            <div id="nav">  
+                <div id="inline_nav">
+                    <h:panelGrid columns="1">
+                        <h:link value="Profil" outcome="index" />
+                        <h:link value="Index" outcome="../index"/>
+                        <h:link value="Startseite" outcome="../index"/>
+                        <h:link value="Abmelden" outcome="../index"/>
+                    </h:panelGrid>  
+                </div>
+
+
+                <!-- soon there will be this links
+                <link href="" value="Profil"/>
+                <link href="" value="Startseite"/>
+                <link href="" value="Abmelden"/>-->
+            </div>
+
+            <div id="pictures"> 
+                <h1>Welcome, [name insert]</h1> 
+                <h:graphicImage url="../img/jimin.jpg" width="400" />
+            </div>
+
+            <div id="edit">  
+                <h:panelGrid columns="2">   
+                        <a href="#" class="action-button shadow animate blue">Bilder hochladen</a>
+                        <a href="#" class="action-button shadow animate red">Bilder löschen</a>
+                </h:panelGrid>
+            </div> 
+        </div>
+    </h:body>
+</html>
+

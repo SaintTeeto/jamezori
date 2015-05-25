@@ -16,7 +16,7 @@ import sql.UserDAO;
  *
  * @author 5ia13meislami
  */
-@ManagedBean
+@ManagedBean(name="login")
 @RequestScoped
 
 public class Login {
@@ -38,7 +38,7 @@ public class Login {
         } else {
             errorMessage = "";
             isLogged = true;
-            return "/app/start.xhtml";
+            return "app/mainPage.xhtml";
         }
     }
 
